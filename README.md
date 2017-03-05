@@ -16,11 +16,11 @@ Optional requirements, though highly recommended to avoid leaving your shared se
 Intended Usage
 --------------
 
-While you're welcome to edit `virtual-mfa.pl` and hard-code your MFA secret, storing the script _with secrets included_ in cleartext is a __bad idea__.  To avoid leaving your MFA shared secrets out in the open on your local filesystem, I ___strongly___ advise encrypting the script with something like [GnuPG](https://www.gnupg.org/).
+While you're welcome to edit `virtual-mfa.pl` and hard-code your MFA secret, storing the script _with secrets included_ in cleartext is a __bad idea__.  To avoid leaving your MFA shared secrets out in the open on your local filesystem, I ___strongly___ advise encrypting the script with something like `gpg`.
 
-Included in this repository is a helper script `generate_mfa.sh` that can generate a self-executing script that is encrypted with `gpg`.
+Included in this repository is a helper script (`generate_mfa.sh`) that can generate an encrypted version of `virtual-mfa.pl` containing your shared secret.  The resulting script can be executed like any other shell command, with the notable exception that you will need to provide your private key passphrase to decrypt the script logic and generate authentication codes.
 
-For those who want to handle encryption/encoding on their own, something like the following should suffice as an example (adjusting command paths accordingly):
+For those who want to handle encryption/encoding/execution on their own, something like the following should suffice as an example (adjusting command paths accordingly):
 
 ```
 cat <<\EOF > OUTPUT_FILENAME
