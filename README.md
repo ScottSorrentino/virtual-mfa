@@ -3,7 +3,7 @@ Virtual MFA
 
 Implementation of the [Time-Based One-Time Password Algorithm](http://tools.ietf.org/html/rfc6238) (TOTP) in Perl.  This script can be used as a virtual Multi-Factor Authentication (MFA) device for sites like [AWS](https://aws.amazon.com/iam/details/mfa/) and [GitHub](https://help.github.com/articles/about-two-factor-authentication/).
 
-This utility can either be used as a primary virtual MFA device or a potential backup for smartphone apps like __Google Authenticator__.
+This utility can either be used as a primary virtual MFA device or a potential backup for smartphone apps like Google Authenticator.
 
 Requirements
 ------------
@@ -16,7 +16,7 @@ Optional requirements, though highly recommended to avoid leaving your shared se
 Intended Usage
 --------------
 
-While you're welcome to edit `virtual-mfa.pl` and hard-code your MFA secret, storing the script _with secrets included_ in cleartext is a __bad idea__.  To avoid leaving your MFA shared secrets out in the open on your local filesystem, I ___strongly__ advise encrypting the script with something like [GnuPG](https://www.gnupg.org/).
+While you're welcome to edit `virtual-mfa.pl` and hard-code your MFA secret, storing the script _with secrets included_ in cleartext is a __bad idea__.  To avoid leaving your MFA shared secrets out in the open on your local filesystem, I ___strongly___ advise encrypting the script with something like [GnuPG](https://www.gnupg.org/).
 
 Included in this repository is a helper script `generate_mfa.sh` that can generate a self-executing script that is encrypted with `gpg`.
 
